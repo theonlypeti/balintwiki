@@ -24,7 +24,7 @@ class WikiCog(commands.Cog):
         link = await self.get_random()
         await self.client.get_channel(channel).send(link)
 
-    @wiki.before_loop  # i could comment this out but then it would look not pretty how my bootup time shot up by 5s haha
+    @wiki.before_loop
     async def before_wiki(self):
         logger.info('starting wikiloop')
         await self.client.wait_until_ready()
